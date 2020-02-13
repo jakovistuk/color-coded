@@ -26,7 +26,7 @@ func main() {
 		fmt.Fprintf(w, "<html> DASHBOARD Requested: %s\n </html>", r.URL.Path)
 	})
 
-	http.HandleFunc("/die", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/go1/die", func(w http.ResponseWriter, r *http.Request) {
 		die();
 	})
 
