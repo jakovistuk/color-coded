@@ -4,6 +4,7 @@ import (
 	"os"
 	"fmt"
 	"net/http"
+	"time"
 	// "github.com/golangci/golangci-lint/pkg/exitcodes"
 )
 
@@ -19,6 +20,8 @@ func main() {
 	}  
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		t := time.Now()
+		fmt.Fprintf(w,"time "+t)
 		fmt.Fprintf(w, "<html onclick=\"window.location.href = '/go1/die'\" style='background:" + os.Getenv("COLOR") + "'> Requested: %s\n </html>", r.URL.Path)
 	})
 
