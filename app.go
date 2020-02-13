@@ -18,10 +18,12 @@ func main() {
 	if len(c) == 0{
 		os.Setenv("COLOR", "#F1A94E") //Blue 44B3C2 and Yellow F1A94E 
 	}  
+	
+
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		t := time.Now()
-		fmt.Fprintf(w,"time "+t)
+		fmt.Fprintf(w,"time "+t.Format(time.UnixDate)))
 		fmt.Fprintf(w, "<html onclick=\"window.location.href = '/go1/die'\" style='background:" + os.Getenv("COLOR") + "'> Requested: %s\n </html>", r.URL.Path)
 	})
 
