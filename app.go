@@ -22,7 +22,7 @@ func main() {
 		fmt.Fprintf(w, "<html onclick=\"window.location.href = '/go1/die'\" style='background:" + os.Getenv("COLOR") + "'> Requested: %s\n </html>", r.URL.Path)
 	})
 
-	http.HandleFunc("/dashboard", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/go1/dashboard", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "<html> DASHBOARD Requested: %s\n </html>", r.URL.Path)
 	})
 
