@@ -19,7 +19,7 @@ func main() {
 	}  
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "<html onclick=\"window.location.href = '/die'\" style='background:" + os.Getenv("COLOR") + "'> Requested: %s\n </html>", r.URL.Path)
+		fmt.Fprintf(w, ""+die())
 	})
 
 	http.HandleFunc("/dashboard", func(w http.ResponseWriter, r *http.Request) {
@@ -35,4 +35,5 @@ func main() {
 
 func die() {
 	os.Exit(3)
+	"aaa"
 }
